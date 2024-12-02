@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Packages - Humsafar.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="bg-blue-500 text-white py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 lg:px-12">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold">
+                    <span class="text-white">humsafar</span><span class="text-yellow-400">.com</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-white text-sm">
+                <a href="flights.html" class="nav-link">Flights</a>
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="visas.html" class="nav-link">Visas</a>
+                <a href="holidays.html" class="nav-link">Holidays</a>
+                <a href="my-trips.html" class="nav-link">My trips</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-blue-600 px-4 py-2">
+            <nav class="flex flex-col space-y-2">
+                <a href="flights.html" class="text-white py-2">Flights</a>
+                <a href="hotels.html" class="text-white py-2">Hotels</a>
+                <a href="visas.html" class="text-white py-2">Visas</a>
+                <a href="holidays.html" class="text-white py-2">Holidays</a>
+                <a href="my-trips.html" class="text-white py-2">My trips</a>
+                <a href="login.html" class="text-white py-2">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="bg-blue-50 text-gray-800 min-h-screen">
+        <section class="bg-blue-500 py-16">
+            <div class="container mx-auto px-4 lg:px-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 text-center">Find Your Dream Holiday Package</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="destination">
+                                        Destination
+                                    </label>
+                                    <div class="relative">
+                                        <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+                                        <input type="text" id="destination" 
+                                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+                                            placeholder="Where do you want to go?">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="package-type">
+                                        Package Type
+                                    </label>
+                                    <div class="relative">
+                                        <i class="fas fa-suitcase absolute left-3 top-3 text-gray-400"></i>
+                                        <select id="package-type" 
+                                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 appearance-none">
+                                            <option>Family Vacation</option>
+                                            <option>Honeymoon Package</option>
+                                            <option>Adventure Trip</option>
+                                            <option>Beach Holiday</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="departure-date">
+                                        Departure Date
+                                    </label>
+                                    <div class="relative">
+                                        <i class="fas fa-calendar absolute left-3 top-3 text-gray-400"></i>
+                                        <input type="date" id="departure-date" 
+                                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="duration">
+                                        Duration
+                                    </label>
+                                    <div class="relative">
+                                        <i class="fas fa-clock absolute left-3 top-3 text-gray-400"></i>
+                                        <select id="duration" 
+                                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 appearance-none">
+                                            <option>3-4 Days</option>
+                                            <option>5-7 Days</option>
+                                            <option>8-10 Days</option>
+                                            <option>10+ Days</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="budget">
+                                        Budget Range
+                                    </label>
+                                    <div class="relative">
+                                        <i class="fas fa-dollar-sign absolute left-3 top-3 text-gray-400"></i>
+                                        <select id="budget" 
+                                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 appearance-none">
+                                            <option>$500 - $1000</option>
+                                            <option>$1000 - $2000</option>
+                                            <option>$2000 - $3000</option>
+                                            <option>$3000+</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="travelers">
+                                        Travelers
+                                    </label>
+                                    <div class="relative">
+                                        <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
+                                        <select id="travelers" 
+                                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 appearance-none">
+                                            <option>1 Adult</option>
+                                            <option>2 Adults</option>
+                                            <option>2 Adults, 1 Child</option>
+                                            <option>2 Adults, 2 Children</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <button type="submit" class="btn-primary w-full md:w-auto px-8 py-3">
+                                    <i class="fas fa-search mr-2"></i>Find Packages
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 lg:px-12 py-12">
+            <h2 class="text-2xl font-bold mb-8">Popular Holiday Packages</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&w=1000&q=80" 
+                         alt="Bali Package" 
+                         class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Adventure</h3>
+                        <p class="text-gray-600 mb-4">5 Days | All Inclusive</p>
+                        <ul class="text-sm text-gray-600 mb-4">
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>4-star hotel accommodation</li>
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>All meals included</li>
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Sightseeing tours</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-500">$899</span>
+                            <button class="btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Dubai Package" 
+                         class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Dubai Luxury</h3>
+                        <p class="text-gray-600 mb-4">7 Days | Premium</p>
+                        <ul class="text-sm text-gray-600 mb-4">
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>5-star hotel stay</li>
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Desert safari</li>
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Burj Khalifa visit</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-500">$1,299</span>
+                            <button class="btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&w=1000&q=80" 
+                         alt="Thailand Package" 
+                         class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Thailand Explorer</h3>
+                        <p class="text-gray-600 mb-4">6 Days | Adventure</p>
+                        <ul class="text-sm text-gray-600 mb-4">
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Beachfront resort</li>
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Island hopping</li>
+                            <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Thai cooking class</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-500">$999</span>
+                            <button class="btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-4 lg:px-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold mb-4">About Us</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">About Humsafar</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Press Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Help Center</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">More</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Airlines</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Countries</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-blue-500 text-center">
+                <p>&copy; 2024 Humsafar.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humsafar.com - Your Travel Partner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-blue-50">
+  <header class="bg-blue-500 text-white py-4 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center px-4 lg:px-12">
+      <div class="flex items-center">
+        <a href="index.html" class="text-2xl font-bold">
+          <span class="text-white">humsafar</span><span class="text-yellow-400">.com</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-white text-sm">
+        <a href="flights.html" class="nav-link">Flights</a>
+        <a href="hotels.html" class="nav-link">Hotels</a>
+        <a href="visas.html" class="nav-link">Visas</a>
+        <a href="holidays.html" class="nav-link">Holidays</a>
+        <a href="my-trips.html" class="nav-link">My trips</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+      <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-blue-600 px-4 py-2">
+      <nav class="flex flex-col space-y-2">
+        <a href="flights.html" class="text-white py-2">Flights</a>
+        <a href="hotels.html" class="text-white py-2">Hotels</a>
+        <a href="visas.html" class="text-white py-2">Visas</a>
+        <a href="holidays.html" class="text-white py-2">Holidays</a>
+        <a href="my-trips.html" class="text-white py-2">My trips</a>
+        <a href="login.html" class="text-white py-2">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="bg-blue-50 text-gray-800 min-h-screen">
+    <section class="bg-blue-500 py-16">
+        <div class="container mx-auto px-4 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Find Your Perfect Trip</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="trip-type">
+                                    Trip Type
+                                </label>
+                                <div class="relative">
+                                    <i class="fas fa-plane absolute left-3 top-3 text-gray-400"></i>
+                                    <select id="trip-type" 
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 appearance-none">
+                                        <option>Flights</option>
+                                        <option>Hotels</option>
+                                        <option>Holiday Packages</option>
+                                        <option>Visa Services</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="from">
+                                    From
+                                </label>
+                                <div class="relative">
+                                    <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="text" id="from" 
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+                                        placeholder="Departure City">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="to">
+                                    To
+                                </label>
+                                <div class="relative">
+                                    <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="text" id="to" 
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+                                        placeholder="Destination City">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="departure">
+                                    Departure
+                                </label>
+                                <div class="relative">
+                                    <i class="fas fa-calendar absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="date" id="departure" 
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="return">
+                                    Return
+                                </label>
+                                <div class="relative">
+                                    <i class="fas fa-calendar absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="date" id="return" 
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="travelers">
+                                    Travelers
+                                </label>
+                                <div class="relative">
+                                    <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
+                                    <select id="travelers" 
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 appearance-none">
+                                        <option>1 Adult</option>
+                                        <option>2 Adults</option>
+                                        <option>2 Adults, 1 Child</option>
+                                        <option>2 Adults, 2 Children</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center">
+                            <button type="submit" class="btn-primary w-full md:w-auto px-8 py-3">
+                                <i class="fas fa-search mr-2"></i>Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 lg:px-12 py-16">
+        <h2 class="text-2xl font-bold mb-8">Popular Destinations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" 
+                         alt="Dubai" 
+                         class="w-full h-72 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Dubai</h3>
+                        <p class="text-white/90 mb-4">Experience luxury in the desert</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 font-bold">From $899</span>
+                            <button class="btn-outline-primary bg-white/10 hover:bg-white/20 text-white border-white">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd" 
+                         alt="Tokyo" 
+                         class="w-full h-72 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Tokyo</h3>
+                        <p class="text-white/90 mb-4">Discover Japanese culture</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 font-bold">From $1,199</span>
+                            <button class="btn-outline-primary bg-white/10 hover:bg-white/20 text-white border-white">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" 
+                         alt="Paris" 
+                         class="w-full h-72 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Paris</h3>
+                        <p class="text-white/90 mb-4">Romance in the city of lights</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 font-bold">From $999</span>
+                            <button class="btn-outline-primary bg-white/10 hover:bg-white/20 text-white border-white">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 lg:px-12 py-12">
+      <h2 class="text-2xl font-bold mb-8 text-center">Why Choose Us</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="card text-center p-6">
+          <i class="fas fa-shield-alt text-4xl text-blue-500 mb-4"></i>
+          <h3 class="font-bold mb-2">Secure Booking</h3>
+          <p class="text-gray-600">Your data is protected with industry-standard encryption</p>
+        </div>
+        <div class="card text-center p-6">
+          <i class="fas fa-tag text-4xl text-blue-500 mb-4"></i>
+          <h3 class="font-bold mb-2">Best Prices</h3>
+          <p class="text-gray-600">We guarantee the best rates for your stay</p>
+        </div>
+        <div class="card text-center p-6">
+          <i class="fas fa-headset text-4xl text-blue-500 mb-4"></i>
+          <h3 class="font-bold mb-2">24/7 Support</h3>
+          <p class="text-gray-600">Our support team is always here to help</p>
+        </div>
+        <div class="card text-center p-6">
+          <i class="fas fa-medal text-4xl text-blue-500 mb-4"></i>
+          <h3 class="font-bold mb-2">Quality Assured</h3>
+          <p class="text-gray-600">All properties are verified for quality</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-blue-600 text-white py-8">
+    <div class="container mx-auto px-4 lg:px-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-bold mb-4">About Us</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">About Humsafar</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Press Center</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">More</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">Airlines</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Countries</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Travel Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-blue-500 text-center">
+        <p>&copy; 2024 Humsafar.com. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

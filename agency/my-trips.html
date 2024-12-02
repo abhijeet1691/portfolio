@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trips - Humsafar.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="bg-blue-500 text-white py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 lg:px-12">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold">
+                    <span class="text-white">humsafar</span><span class="text-yellow-400">.com</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-white text-sm">
+                <a href="flights.html" class="nav-link">Flights</a>
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="visas.html" class="nav-link">Visas</a>
+                <a href="holidays.html" class="nav-link">Holidays</a>
+                <a href="my-trips.html" class="nav-link">My trips</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-blue-600 px-4 py-2">
+            <nav class="flex flex-col space-y-2">
+                <a href="flights.html" class="text-white py-2">Flights</a>
+                <a href="hotels.html" class="text-white py-2">Hotels</a>
+                <a href="visas.html" class="text-white py-2">Visas</a>
+                <a href="holidays.html" class="text-white py-2">Holidays</a>
+                <a href="my-trips.html" class="text-white py-2">My trips</a>
+                <a href="login.html" class="text-white py-2">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="bg-blue-500 min-h-screen py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-5xl mx-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <h1 class="text-2xl font-bold text-gray-800">My Trips</h1>
+                    <div class="flex space-x-4">
+                        <button class="btn-outline-primary">
+                            <i class="fas fa-calendar-alt mr-2"></i>Upcoming
+                        </button>
+                        <button class="btn-outline-primary">
+                            <i class="fas fa-history mr-2"></i>Past
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Trips -->
+                <div class="space-y-6">
+                    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Dubai Adventure</h3>
+                                    <p class="text-gray-600 mt-1">
+                                        <i class="fas fa-calendar mr-2"></i>15 Dec - 22 Dec 2024
+                                    </p>
+                                </div>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                                    Confirmed
+                                </span>
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-600">Flight</h4>
+                                    <p class="mt-1">Emirates EK507</p>
+                                    <p class="text-sm text-gray-500">Mumbai → Dubai</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-600">Hotel</h4>
+                                    <p class="mt-1">Burj Al Arab</p>
+                                    <p class="text-sm text-gray-500">7 Nights</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-600">Activities</h4>
+                                    <p class="mt-1">Desert Safari</p>
+                                    <p class="text-sm text-gray-500">2 Activities Booked</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-end space-x-4">
+                                <button class="btn-outline-primary">
+                                    <i class="fas fa-edit mr-2"></i>Modify
+                                </button>
+                                <button class="btn-primary">
+                                    <i class="fas fa-file-alt mr-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Bali Retreat</h3>
+                                    <p class="text-gray-600 mt-1">
+                                        <i class="fas fa-calendar mr-2"></i>3 Jan - 10 Jan 2025
+                                    </p>
+                                </div>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+                                    Pending
+                                </span>
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-600">Flight</h4>
+                                    <p class="mt-1">Garuda Indonesia GA-412</p>
+                                    <p class="text-sm text-gray-500">Mumbai → Denpasar</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-600">Hotel</h4>
+                                    <p class="mt-1">Four Seasons Jimbaran</p>
+                                    <p class="text-sm text-gray-500">7 Nights</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-600">Activities</h4>
+                                    <p class="mt-1">Temple Tour</p>
+                                    <p class="text-sm text-gray-500">3 Activities Booked</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-end space-x-4">
+                                <button class="btn-outline-primary">
+                                    <i class="fas fa-edit mr-2"></i>Modify
+                                </button>
+                                <button class="btn-primary">
+                                    <i class="fas fa-file-alt mr-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div class="hidden text-center py-12">
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-plane-departure text-6xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">No trips booked yet</h3>
+                    <p class="text-gray-600 mb-6">Start planning your next adventure today!</p>
+                    <a href="index.html" class="btn-primary inline-flex items-center">
+                        <i class="fas fa-search mr-2"></i>Browse Destinations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-4 lg:px-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold mb-4">About Us</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">About Humsafar</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Press Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Help Center</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">More</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Airlines</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Countries</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-blue-500 text-center">
+                <p>&copy; 2024 Humsafar.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

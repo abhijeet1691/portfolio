@@ -1,0 +1,96 @@
+/* Main styles for Humsafar.com */
+.auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.page-container {
+    min-height: calc(100vh - 64px);
+}
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Form styles */
+.form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-transparent;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-6 rounded-md transition-colors duration-200;
+}
+
+.btn-secondary {
+    @apply w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-md transition-colors duration-200;
+}
+
+.btn-outline-primary {
+    @apply w-full border-2 border-yellow-400 text-gray-800 hover:bg-yellow-400 font-bold py-3 px-6 rounded-md transition-colors duration-200;
+}
+
+/* Card styles */
+.card {
+    @apply bg-white rounded-lg shadow-lg p-6;
+}
+
+.featured-card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200;
+}
+
+/* Navigation */
+.nav-link {
+    @apply hover:text-yellow-400 transition-colors duration-200;
+}
+
+.active-tab {
+    @apply border-b-2 border-yellow-400 text-blue-700;
+}
+
+/* Form elements */
+.form-checkbox {
+    @apply rounded border-gray-300 text-yellow-400 focus:ring-yellow-400;
+}
+
+/* Layout utilities */
+.center-card {
+    @apply max-w-3xl mx-auto px-4;
+}
+
+/* Card sections */
+.card-section {
+    @apply container mx-auto px-4 lg:px-12 py-12;
+}
+
+/* Featured section */
+.featured-section {
+    @apply container mx-auto px-4 lg:px-12 py-12;
+}
+
+/* Grid layouts */
+.featured-grid {
+    @apply grid md:grid-cols-3 gap-6;
+}
+
+/* Search form */
+.search-form {
+    @apply space-y-6;
+}
+
+/* Button container */
+.button-container {
+    @apply mt-6;
+}
+
+/* Card padding */
+.card-padding {
+    @apply p-8;
+}
+
+/* Search form container */
+.search-form-container {
+    @apply max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8;
+}
